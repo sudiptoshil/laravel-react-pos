@@ -27,8 +27,14 @@
     <link rel="stylesheet" type="text/css" href="<?=asset('public/assets/css/datatables-select.min.css')?>">
     <link rel="stylesheet" type="text/css" href="<?=asset('public/assets/css/bootstrap-timepicker.css')?>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.css">
+    <link rel="stylesheet" href=" https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.6/css/responsive.bootstrap.min.css">
 
 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="{{asset('public/assets/js/jquery-3.2.1.min.js')}}"></script>
 
     <script type="text/javascript" src="<?=asset('public/assets/js/google-chart.js')?>"></script>
@@ -55,14 +61,14 @@
                 <div class="header-right">
                     <div class="page-title-box pull-left">
                         <h3>
-                            
+
                         </h3>
                     </div>
-                
+
                     <div style="text-align: center;">
                     <ul class="nav navbar-nav navbar-right user-menu pull-right">
                         <div class="dropdown">
-                            <a class="dropdown-toggle" href="#" role="button" id="profileLinkDropdown" 
+                            <a class="dropdown-toggle" href="#" role="button" id="profileLinkDropdown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span><i class="far fa-user"></i></span> Admin
                             </a>
@@ -77,10 +83,10 @@
 
                     </ul>
                     </div>
-                    
+
 
                     <div class="dropdown mobile-user-menu pull-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                         aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                         <ul class="dropdown-menu pull-right">
                             <li><a href="">Logout</a></li>
@@ -171,7 +177,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>     
+            </div>
         </div>
         <div class="page-wrapper">
             @yield('content')

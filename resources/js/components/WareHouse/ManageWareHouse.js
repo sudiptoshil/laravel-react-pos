@@ -15,7 +15,7 @@ class ManageWareHouse extends Component {
             this.setState({ warehouses: res.data.warehouses });
             this.setState({ loading: false });
         }
-        console.log(res);
+        // console.log(res);
     };
     componentDidMount = () => {
         this.fetchallwarehouse();
@@ -23,43 +23,50 @@ class ManageWareHouse extends Component {
 
     render() {
         if (this.state.loading) {
-            return <h2>Loading</h2>;
+            return (
+                <h2 className="text-center mt-50">
+                    <i className="fas fa-spinner fa-spin"></i>
+                </h2>
+            );
         }
 
         return (
-
-                <div className="content container-fluid">
-                    <div className="row">
-                        <div className="col-xs-6">
-                            <h4 className="page-title">Data Tables</h4>
-                        </div>
-                        <div className="col-xs-6">
-
-                                <Link to="/add-warehouse">Add WareHouse</Link>
-
+            <div className="content container-fluid">
+                <div className="row">
+                    <div className="col-xs-6">
+                        <h4 className="page-title"></h4>
+                    </div>
+                    <div className="col-xs-6">
+                        <div className="row">
+                            <Link
+                                to="/dbBackup/add-warehouse"
+                                type="button"
+                                className="btn btn-primary"
+                            >
+                                Add WareHouse
+                            </Link>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-12">
-                            <div className="card-box">
-                                <div className="card-block">
-                                    <h6 className="card-title text-bold">
-
-                                    </h6>
-                                    <p className="content-group"></p>
-                                    <table className="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <td>SL</td>
-                                                <td>Name</td>
-                                                <td>Foreign Name</td>
-                                                <td>Foreign Name</td>
-                                                <td>Wh keeper</td>
-                                                <td>Location</td>
-                                                <td>Telephone</td>
-                                                <td>Sequence</td>
-                                                {/* <td>Province No</td> */}
-                                                {/* <td>Resign Code</td>
+                </div>
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="card-box">
+                            <div className="card-block">
+                                <h6 className="card-title text-bold"></h6>
+                                <p className="content-group"></p>
+                                <table className="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <td>SL</td>
+                                            <td>Name</td>
+                                            <td>Foreign Name</td>
+                                            <td>Foreign Name</td>
+                                            <td>Wh keeper</td>
+                                            <td>Location</td>
+                                            <td>Telephone</td>
+                                            <td>Sequence</td>
+                                            {/* <td>Province No</td> */}
+                                            {/* <td>Resign Code</td>
                                                 <td>
                                                     Wh Transfer Interface
                                                     Account
@@ -74,23 +81,20 @@ class ManageWareHouse extends Component {
                                                 <td>Latitude</td>
                                                 <td>Address</td>
                                                 <td>Foreign Address</td> */}
-                                                <td>Action</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <Warehouse
-                                                warehouse={
-                                                    this.state.warehouses
-                                                }
-                                            />
-                                        </tbody>
-                                    </table>
-                                </div>
+                                            <td>Action</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <Warehouse
+                                            warehouse={this.state.warehouses}
+                                        />
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            
+            </div>
         );
     }
 }

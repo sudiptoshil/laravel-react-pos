@@ -11,6 +11,9 @@ import { connect } from 'react-redux'
 import ManageWareHouse from './Components/WareHouse/ManageWareHouse'
 import AddWareHouse from './Components/WareHouse/addWareHouse';
 import EditWareHouse from './Components/WareHouse/EditWareHouse';
+// for vendor part.....
+import CreateVendor from './Components/Vendor/CreateVendor';
+import ManageVendor from './Components/Vendor/ManageVendor'
 
 import {defaultRouteLink,getAccessTokenName,userLogout,isLoginExist} from './common/config';
 import {getCookieKeyInfo,setCookie,removeCookie} from './common/CookieService'
@@ -47,20 +50,35 @@ export const Routes=(props)=> {
                               component={Orders}
                           />
                           {/* Route for Warhouse */}
-                          <Route exact
+                          <Route
+                              exact
                               path={defaultRouteLink + "/add-warehouse"}
-                              component={Orders}
-                              />
-
-                          <Route exact
-                              path={defaultRouteLink + "/manage-warehouse"}
-                               component={ManageWareHouse}
-                              />
+                              component={AddWareHouse}
+                          />
 
                           <Route
-                              path="/edit-warehouse/:id"
+                              exact
+                              path={defaultRouteLink + "/manage-warehouse"}
+                              component={ManageWareHouse}
+                          />
+
+                          <Route
+                              exact
+                              path={defaultRouteLink + "/edit-warehouse/:id"}
                               render={props => <EditWareHouse {...props} />}
-                          ></Route>
+                          />
+
+                          {/* route for Vendor creation */}
+                          <Route
+                              exact
+                              path={defaultRouteLink + "/create-vendor"}
+                              component={CreateVendor}
+                          />
+                          <Route
+                              exact
+                              path={defaultRouteLink + "/manage-vendor"}
+                              component={ManageVendor}
+                          />
                       </Header>
                   ) : (
                       <Route component={NotFound} />

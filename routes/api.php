@@ -26,12 +26,15 @@ Route::namespace('frontend')->group(function () {
 
 Route::namespace('WareHouse')->group(function () {
 
-        Route::post('/save-warehouse', 'WareHouseController@add_warehouse')->name('save-warehouse');
-        Route::get('/all-warehouse', 'WareHouseController@index')->name('all-warehouse');
-        Route::get('/all-warehouse', 'WareHouseController@index')->name('all-warehouse');
-        Route::get('/edit-warehouse/{id}', 'WareHouseController@edit_warehouse')->name('edit-warehouse');
-        Route::patch('/update-warehouse/{id}', 'WareHouseController@update_warehouse')->name('edit-warehouse');
-  
+    Route::post('/save-warehouse', 'WareHouseController@add_warehouse')->name('save-warehouse');
+    Route::get('/all-warehouse', 'WareHouseController@index')->name('all-warehouse');
+    Route::get('/edit-warehouse/{id}', 'WareHouseController@edit_warehouse')->name('edit-warehouse');
+    Route::patch('/update-warehouse/{id}', 'WareHouseController@update_warehouse')->name('edit-warehouse');
 });
+Route::namespace('Vendor')->group(function () {
 
-
+    Route::post('/save-vendor', 'VendorController@create_vendor')->name('save-vendor');
+    Route::get('/all-vendor', 'VendorController@index')->name('all-vendor');
+    Route::post('/save-vendor', 'VendorController@create_vendor')->name('save-vendor');
+    Route::post('/save-vendor', 'VendorController@create_vendor')->name('save-vendor');
+});

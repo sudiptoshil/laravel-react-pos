@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import EditWareHouse from './EditWareHouse'
 
 class WarHouse extends Component {
     render() {
         {
             props => <PageStart {...props} key={this.props.location.key} />;
         }
+
         const { warehouse } = this.props;
         return warehouse.map(warehouse => {
             return (
@@ -33,7 +33,7 @@ class WarHouse extends Component {
                     <td>{warehouse.foreign_address}</td> */}
                     <td>
                         <Link
-                            to={`/edit-warehouse/${warehouse.id}`}
+                            to={`/dbBackup/edit-warehouse/${warehouse.id}`}
                             className="btn btn-primary"
                             type="button"
                         >
